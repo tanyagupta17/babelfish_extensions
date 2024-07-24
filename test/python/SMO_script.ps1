@@ -33,6 +33,7 @@ if($script_flag -eq $var_one)
     $Objects += $db.UserDefinedTableTypes
     $Objects += $db.Tables.Indexes
     $Objects += $db.Tables.Triggers
+    $Objects += $db.Sequences
     foreach ($CurrentObject in $Objects)
     {
         if (-not $CurrentObject.IsSystemObject )
@@ -59,6 +60,7 @@ else
     $SubObjects += $db.Tables.Indexes
     $SubObjects += $db.Tables.Triggers
     $SubObjects += $db.Users
+    $SubObjects += $db.Sequences
     foreach ($CurrentObject in $Objects)
     {
         if ($CurrentObject.schema -ne $schm -and $CurrentObject.schema -ne $dtb -and $CurrentObject.schema -ne $null -and -not $CurrentObject.IsSystemObject )
